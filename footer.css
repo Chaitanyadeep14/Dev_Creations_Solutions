@@ -1,0 +1,166 @@
+/* General Footer Styles */
+.footer {
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 20px 40px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* General help section styling */
+.help-section {
+    display: flex;
+    justify-content: space-between; /* Space between text and options */
+    align-items: center; /* Aligns the content vertically */
+    padding: 20px;
+    background-color: #f8faff; /* Light blue background */
+}
+
+/* Styling for help text */
+.help-text {
+    flex: 1; /* Occupies available space */
+    text-align: left; /* Align text to the left */
+}
+
+.help-text h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.help-text p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Styling for help options */
+.help-options {
+    display: flex;
+    gap: 30px; /* Spacing between each option */
+}
+
+.option {
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+    gap: 10px; /* Space between icon and text */
+}
+
+.option img {
+    width: 30px; /* Adjust the size of the icons */
+    height: 30px;
+}
+
+.option p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.option a {
+    font-size: 0.9rem;
+    color: #007bff; /* Blue color for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.option a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* General footer styling */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #f8faff;
+    font-family: Arial, sans-serif;
+}
+
+/* Brand Section */
+.brand-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.logo-and-apps {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.logo {
+    width: 200px; /* Adjust logo size */
+    height: auto;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start; /* Align social icons to the left */
+}
+
+.social-icons img {
+    width: 25px; /* Social icon size */
+    height: 25px;
+}
+
+/* Menu Section */
+.menu-section {
+    flex: 2;
+    display: flex;
+    justify-content: flex-end; /* Align menus to the right */
+    gap: 40px; /* Space between menu columns */
+}
+
+.menu-column {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-column h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.menu-column a {
+    font-size: 0.9rem;
+    color: #555;
+    text-decoration: none;
+}
+
+.menu-column a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #666;
+}
+
+.legal-links a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+.legal-links a:hover {
+    color: #007bff;
+}

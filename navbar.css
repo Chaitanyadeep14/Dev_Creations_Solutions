@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Logo Section */
+.navbar-logo .logo {
+    width: 150px;
+    height: auto;
+}
+
+/* Quick Links Section */
+.navbar-links {
+    display: flex;
+    gap: 20px; /* Space between links */
+    margin-right: 40px; /* Adds space after the links */
+}
+
+.navbar-links .nav-link {
+    position: relative;
+    text-decoration: none;
+    font-size: 14px;
+    color: #333; /* Neutral text color */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Add underline animation */
+.navbar-links .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; /* Position underline slightly below the text */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff8b00; /* Accent color for underline */
+    transition: width 0.3s ease; /* Smooth animation */
+}
+
+.navbar-links .nav-link:hover {
+    color: #ff8b00; /* Change text color on hover */
+}
+
+.navbar-links .nav-link:hover::after {
+    width: 100%; /* Expand the underline to full width */
+}
+
+/* Search Bar */
+.navbar-search {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.search-bar {
+    width:80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.search-bar::placeholder {
+    color: #aaa;
+}
+
+/* Icon Section */
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-icons .icon img {
+    width: 25px; /* Consistent icon size */
+    height: 25px;
+    cursor: pointer;
+    filter: invert(0); /* Original color */
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.navbar-icons .icon img:hover {
+    transform: scale(1.1); /* Slight zoom */
+    filter: opacity(0.8); /* Subtle opacity on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none; /* Hide links for small screens */
+    }
+    .navbar-search {
+        margin: 0 10px;
+    }
+    .search-bar {
+        width: 70%;
+    }
+}

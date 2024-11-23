@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev</title>
+    <link rel="stylesheet" href="navbar.css"> <!-- Navbar CSS -->
+    <link rel="stylesheet" href="index.css"> 
+</head>
+<div>
+    <!-- Include the Navbar -->
+   <div id="navbar-container">
+        <iframe src="navbar.html" frameborder="0" style="width: 100%; height: 100px;"></iframe>
+    </div> 
+
+
+    
+    <!--This is not responsive.
+
+It functions best within a screen width range of 1000-1400px, with the HTML/CSS/JS boxes on the side.
+
+This is just a Uni project.
+-->
+
+
+<div class="home">
+            
+    <div class="home-popular">
+        <div class="slider">
+            <div class="slider-prev"></div>
+            
+            <ul>
+                <li>
+                    <img class="item small1" style="order: 0;" src="images/1.svg" 
+                    >
+                </li>
+                <li>
+                    <img class="item big1" style="order: 1;" src="images/2.svg" 
+                    >
+                </li>
+
+                <li>
+                    <img class="item focus" style="order: 2;" src="images/3.svg"
+                     >
+                </li>
+
+                <li>
+                    <img class="item big2" style="order: 3;" src="images/4.svg"
+                    >
+                </li>
+
+                <li>
+                    <img class="item small2" style="order: 4;" src="images/5.svg"
+                     >
+                </li>
+                <li>
+                    <img class="item small2" style="order: 4;" src="images/6.svg"
+                     >
+                </li>
+                <li>
+                    <img class="item small2" style="order: 4;" src="images/7.svg"
+                     >
+                </li>
+                <li>
+                    <img class="item small2" style="order: 4;" src="images/8.svg"
+                     >
+                </li>
+                
+
+            </ul>
+
+            <div class="slider-next"></div>
+        </div>
+
+        <div class="description">
+            <h3 data-index="4">landscape & wildlife photography</h3>
+            <h3 data-index="3">introduction to marketing</h3>
+            <h3 data-index="2" class="active">introduction to data analytics</h3>
+            <h3 data-index="1">biomedical technology</h3>
+            <h3 data-index="0">internal medicine i</h3>
+        </div>
+        
+
+        <div class="further-description">
+            <h2 data-index="14"></h2>
+            <h2 data-index="13"></h2>
+            <h2 data-index="12" class="active"></h2>
+            <h2 data-index="11"></h2>
+            <h2 data-index="10"></h2>
+        </div>
+    </div>
+
+    <div class="home-header">
+        <h1>Craft a </h1>
+        <h1>Strong Brand</h1>
+        <h1>Identity</h1>
+    </div>
+    
+</div>
+
+
+
+
+  
+
+
+    <!-- Product Page Content -->
+    <main class="main-page">
+        <section class="shop-by-category">
+            <h2>Shop by Category</h2>
+            <div class="categories">
+                <div class="category-item">
+                    <img src="images/1.svg" alt="Personal Care">
+                    <span>Personal Care</span>
+                </div>
+                <div class="category-item">
+                    <img src="images/2.svg" alt="Accessories">
+                    <span>Accessories</span>
+                </div>
+                <div class="category-item">
+                    <img src="images/3.svg" alt="Coats">
+                    <span>Coats</span>
+                </div>
+                <div class="category-item">
+                    <img src="images/4.svg" alt="Sweat Pants">
+                    <span>Sweat Pants</span>
+                </div>
+                <div class="category-item">
+                    <img src="images/5.svg" alt="Perfume">
+                    <span>Perfume</span>
+                </div>
+                <div class="category-item">
+                    <img src="images/6.svg" alt="T-Shirt">
+                    <span>T-Shirt</span>
+                </div>
+                <div class="category-item">
+                    <img src="images/7.svg" alt="Sneakers">
+                    <span>Sneakers</span>
+                </div>
+                <div class="category-item">
+                    <img src="images/8.svg" alt="Bags">
+                    <span>Bags</span>
+                </div>
+            </div>
+            <a href="#" class="see-all">See all</a>
+        </section>
+</main>
+   
+
+
+
+
+
+    <script>
+        document.querySelectorAll('.category-item').forEach(item => {
+        item.addEventListener('click', () => {
+            alert(`You clicked on ${item.querySelector('span').innerText}`);
+        });
+    });
+
+// Listen for Click -----------------------------------------------------------
+document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("slider-prev")) {
+        togglePrevious();
+        togglePreviousDesc();
+        updatePrev();
+    } else if (e.target.classList.contains("slider-next")) {
+        toggleNext();
+        toggleNextDesc();
+        updateNext();
+    }
+});
+
+// Rotate the Course Title -----------------------------------------------------------
+function togglePrevious() {
+    const currentActive = document.querySelector("h3.active");
+    const currentIndex = parseInt(currentActive.dataset.index);
+
+    if (currentIndex - 1 >= 0) {
+        const previousChild = document.querySelector(`[data-index="${currentIndex - 1}"]`);
+        currentActive.classList.remove("active");
+        previousChild.classList.add("active");
+    } else {
+        const previousChild = document.querySelector(`[data-index="4"]`);
+        currentActive.classList.remove("active");
+        previousChild.classList.add("active");
+    }
+}
+
+function toggleNext() {
+    const currentActive = document.querySelector("h3.active");
+    const currentIndex = parseInt(currentActive.dataset.index);
+
+    if (currentIndex + 1 <= 4) {
+        const nextChild = document.querySelector(`[data-index="${currentIndex + 1}"]`);
+        currentActive.classList.remove("active");
+        nextChild.classList.add("active");
+    } else {
+        const nextChild = document.querySelector(`[data-index="0"]`);
+        currentActive.classList.remove("active");
+        nextChild.classList.add("active");
+    }
+}
+
+// Rotate the Course Description -----------------------------------------------------------
+function togglePreviousDesc() {
+    const currentActive = document.querySelector("h2.active");
+    const currentIndex = parseInt(currentActive.dataset.index);
+
+    if (currentIndex - 1 >= 10) {
+        const previousChild = document.querySelector(`[data-index="${currentIndex - 1}"]`);
+        currentActive.classList.remove("active");
+        previousChild.classList.add("active");
+    } else {
+        const previousChild = document.querySelector(`[data-index="14"]`);
+        currentActive.classList.remove("active");
+        previousChild.classList.add("active");
+    }
+}
+
+function toggleNextDesc() {
+    const currentActive = document.querySelector("h2.active");
+    const currentIndex = parseInt(currentActive.dataset.index);
+
+    if (currentIndex + 1 <= 14) {
+        const nextChild = document.querySelector(`[data-index="${currentIndex + 1}"]`);
+        currentActive.classList.remove("active");
+        nextChild.classList.add("active");
+    } else {
+        const nextChild = document.querySelector(`[data-index="10"]`);
+        currentActive.classList.remove("active");
+        nextChild.classList.add("active");
+    }
+}
+
+// Rotate the Course Images -----------------------------------------------------------
+function updateNext() {
+    const items = document.querySelectorAll(".item");
+    items.forEach((item) => {
+        let position = parseInt(item.style.order);
+        if (position + 1 <= 4) {
+            position++;
+            item.style.order = position;
+        } else {
+            item.style.order = 0;
+        }
+    });
+
+    items.forEach((item) => {
+        let position2 = parseInt(item.style.order);
+        if (position2 == 0) {
+            item.classList.add("small1");
+            item.classList.remove("small2");
+        } else if (position2 == 1) {
+            item.classList.add("big1");
+            item.classList.remove("small1");
+        } else if (position2 == 2) {
+            item.classList.add("focus");
+            item.classList.remove("big1");
+        } else if (position2 == 3) {
+            item.classList.add("big2");
+            item.classList.remove("focus");
+        } else if (position2 == 4) {
+            item.classList.add("small2");
+            item.classList.remove("big2");
+        }
+    });
+}
+
+function updatePrev() {
+    const items = document.querySelectorAll(".item");
+    items.forEach((item) => {
+        let position = parseInt(item.style.order);
+        if (position - 1 >= 0) {
+            position--;
+            item.style.order = position;
+        } else {
+            item.style.order = 4;
+        }
+    });
+
+    items.forEach((item) => {
+        let position2 = parseInt(item.style.order);
+        if (position2 == 0) {
+            item.classList.add("small1");
+            item.classList.remove("big1");
+        } else if (position2 == 1) {
+            item.classList.add("big1");
+            item.classList.remove("focus");
+        } else if (position2 == 2) {
+            item.classList.add("focus");
+            item.classList.remove("big2");
+        } else if (position2 == 3) {
+            item.classList.add("big2");
+            item.classList.remove("small2");
+        } else if (position2 == 4) {
+            item.classList.add("small2");
+            item.classList.remove("small1");
+        }
+    });
+}
+
+// Auto-Next Functionality -----------------------------------------------------------
+let autoSlide = setInterval(() => {
+    toggleNext();
+    toggleNextDesc();
+    updateNext();
+}, 3000); // Adjust the interval as needed (3000ms = 3 seconds)
+
+// Pause Auto-Next on Hover
+document.addEventListener("mouseover", (e) => {
+    if (e.target.closest(".slider")) {
+        clearInterval(autoSlide);
+    }
+});
+
+// Resume Auto-Next on Mouse Leave
+document.addEventListener("mouseout", (e) => {
+    if (e.target.closest(".slider")) {
+        autoSlide = setInterval(() => {
+            toggleNext();
+            toggleNextDesc();
+            updateNext();
+        }, 1000);
+    }
+});
+
+
+
+    </script>
+
+
+</body>
+</html>
